@@ -5,10 +5,10 @@
 # 广告拦截adghome
 #CUSTOM_PACKAGES="$CUSTOM_PACKAGES luci-app-adguardhome"
 # 分区扩容 by sirpdboy 
-#CUSTOM_PACKAGES="$CUSTOM_PACKAGES luci-app-partexp"
-#CUSTOM_PACKAGES="$CUSTOM_PACKAGES luci-i18n-partexp-zh-cn"
+CUSTOM_PACKAGES="$CUSTOM_PACKAGES luci-app-partexp"
+CUSTOM_PACKAGES="$CUSTOM_PACKAGES luci-i18n-partexp-zh-cn"
 # 酷猫主题 by sirpdboy 
-#CUSTOM_PACKAGES="$CUSTOM_PACKAGES luci-theme-kucat"
+CUSTOM_PACKAGES="$CUSTOM_PACKAGES luci-theme-kucat"
 # 进阶设置 by sirpdboy 
 # 当luci-app-advancedplus插件开启时 需排除冲突项 luci-app-argon-config和luci-i18n-argon-config-zh-cn 减号代表排除
 #CUSTOM_PACKAGES="$CUSTOM_PACKAGES luci-app-advancedplus"
@@ -24,8 +24,8 @@
 # Turbo ACC 网络加速
 #CUSTOM_PACKAGES="$CUSTOM_PACKAGES luci-app-turboacc"
 # 应用过滤 openappfilter.com
-#CUSTOM_PACKAGES="$CUSTOM_PACKAGES luci-app-appfilter"
-#CUSTOM_PACKAGES="$CUSTOM_PACKAGES luci-i18n-appfilter-zh-cn"
+CUSTOM_PACKAGES="$CUSTOM_PACKAGES luci-app-appfilter"
+CUSTOM_PACKAGES="$CUSTOM_PACKAGES luci-i18n-appfilter-zh-cn"
 # 设置向导 by sirpdboy
 #CUSTOM_PACKAGES="$CUSTOM_PACKAGES luci-app-netwizard"
 #CUSTOM_PACKAGES="$CUSTOM_PACKAGES luci-i18n-netwizard-zh-cn"
@@ -34,4 +34,4 @@
 # 若去掉istore商店 则打开注释
 #CUSTOM_PACKAGES="$CUSTOM_PACKAGES -luci-app-store"
 # 若去掉首页和网络向导 则打开注释
-#CUSTOM_PACKAGES="$CUSTOM_PACKAGES -luci-i18n-quickstart-zh-cn"
+CUSTOM_PACKAGES="$CUSTOM_PACKAGES -luci-i18n-quickstart-zh-cn"
