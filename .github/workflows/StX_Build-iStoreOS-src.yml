@@ -1,4 +1,4 @@
-name: 💿 StX_Build-iStoreOS-src
+name: 💿 StX_Build-iStoreOS-pre
 on:
   repository_dispatch:
   workflow_dispatch:
