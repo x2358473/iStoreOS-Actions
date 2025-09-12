@@ -4,12 +4,12 @@ on:
   workflow_dispatch:
     inputs:
       openwrt_board:
-        description: "请选择设备型号（默认当下主流设备）"
+        description: "请选择设备型号（默认当下常见设备）"
         required: true
-        default: "a311d-oes_s905d_wxy-oect_station-m2_tvi3315a_jp-tvbox_s922x-oes-plus_fine3399"
+        default: "a311d-oes_s905d_wxy-oect_jp-tvbox_s922x-oes-plus_fine3399_sv-33a6x_dg-tn3568"
         type: choice
         options:
-          - a311d-oes_s905d_wxy-oect_station-m2_tvi3315a_jp-tvbox_s922x-oes-plus_fine3399
+          - a311d-oes_s905d_wxy-oect_jp-tvbox_s922x-oes-plus_fine3399_sv-33a6x_dg-tn3568
           - a311d
           - a311d-oes
           - alark35-3500
@@ -158,6 +158,7 @@ on:
           - tqc-a01
           - tvi3315a
           - vplus
+          - wocyber-a3
           - wxy-oect
           - wxy-oect-replaced
           - xiaobao
@@ -183,7 +184,6 @@ on:
         type: choice
         options:
           - RELEASE
-          - TEST
       network_settings:
         description: "请选择初始网络配置（确保step1有生成）"
         required: true
