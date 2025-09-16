@@ -30,5 +30,11 @@ CUSTOM_PACKAGES="$CUSTOM_PACKAGES luci-i18n-appfilter-zh-cn"
 # 若去掉istore商店 则打开注释
 #CUSTOM_PACKAGES="$CUSTOM_PACKAGES -luci-app-store"
 # 若去掉首页和网络向导 则打开注释
-CUSTOM_PACKAGES="$CUSTOM_PACKAGES -luci-i18n-quickstar"
+CUSTOM_PACKAGES="$CUSTOM_PACKAGES -luci-app-quickstar"
 CUSTOM_PACKAGES="$CUSTOM_PACKAGES -luci-i18n-quickstart-zh-cn"
+# 去除自带的lucky
+CUSTOM_PACKAGES="$CUSTOM_PACKAGES -luci-app-lucky"
+CUSTOM_PACKAGES="$CUSTOM_PACKAGES -luci-i18n-lucky-zh-cn"
+# 去除openlist
+CUSTOM_PACKAGES="$CUSTOM_PACKAGES -luci-app-openlist2"
+CUSTOM_PACKAGES="$CUSTOM_PACKAGES -luci-i18n-openlist2-zh-cn"
