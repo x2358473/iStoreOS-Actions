@@ -33,11 +33,11 @@
 #CUSTOM_PACKAGES="$CUSTOM_PACKAGES -luci-app-quickstar"
 #CUSTOM_PACKAGES="$CUSTOM_PACKAGES -luci-i18n-quickstart-zh-cn"
 # 去除自带的lucky
-#CUSTOM_PACKAGES="$CUSTOM_PACKAGES -luci-app-lucky"
-#CUSTOM_PACKAGES="$CUSTOM_PACKAGES -luci-i18n-lucky-zh-cn"
+CUSTOM_PACKAGES="$CUSTOM_PACKAGES -luci-app-lucky"
+CUSTOM_PACKAGES="$CUSTOM_PACKAGES -luci-i18n-lucky-zh-cn"
 # 去除openlist
-#CUSTOM_PACKAGES="$CUSTOM_PACKAGES -luci-app-openlist2"
-#CUSTOM_PACKAGES="$CUSTOM_PACKAGES -luci-i18n-openlist2-zh-cn"
+CUSTOM_PACKAGES="$CUSTOM_PACKAGES -luci-app-openlist2"
+CUSTOM_PACKAGES="$CUSTOM_PACKAGES -luci-i18n-openlist2-zh-cn"
 # 去除adguardhome
-#CUSTOM_PACKAGES="$CUSTOM_PACKAGES -luci-app-adguardhome"
-#CUSTOM_PACKAGES="$CUSTOM_PACKAGES -luci-i18n-adguardhome-zh-cn"
+CUSTOM_PACKAGES="$CUSTOM_PACKAGES -luci-app-adguardhome"
+CUSTOM_PACKAGES="$CUSTOM_PACKAGES -luci-i18n-adguardhome-zh-cn"
