@@ -75,11 +75,11 @@ PACKAGES="$PACKAGES dbus"                         # D-Bus消息总线系统
 PACKAGES="$PACKAGES dkml"                         # DKMS内核模块管理工具
 PACKAGES="$PACKAGES -dnsmasq"                     # 移除轻量DNS服务器dnsmasq
 PACKAGES="$PACKAGES dnsmasq-full"                 # 全功能DNS服务器和DHCP服务器
-if [ "$INCLUDE_DOCKER" = "yes" ]; then
-    PACKAGES="$PACKAGES docker"                       # Docker容器引擎
-    PACKAGES="$PACKAGES docker-compose"               # Docker容器编排工具
-    PACKAGES="$PACKAGES dockerd"                      # Docker守护进程
-fi
+#if [ "$INCLUDE_DOCKER" = "yes" ]; then
+PACKAGES="$PACKAGES docker"                       # Docker容器引擎
+PACKAGES="$PACKAGES docker-compose"               # Docker容器编排工具
+PACKAGES="$PACKAGES dockerd"                      # Docker守护进程
+#fi
 PACKAGES="$PACKAGES dropbear"                     # 轻量级SSH服务器
 PACKAGES="$PACKAGES ds-lite"
 PACKAGES="$PACKAGES e100-firmware"                # Intel E100系列网卡固件
