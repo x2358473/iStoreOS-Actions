@@ -7,6 +7,17 @@
 
 > **使用此仓库必须设置机密token，Actions云编译固件时需要用到，通常在仓库设置里面。机密键名为 `GH_TOKEN`（严禁在仓库可视代码中填写，否则后果自负）**
 
+# 😅Built-in package plan
+| 插件                     | 状态 | 插件                      | 状态  |
+|:------------------------:|:----:|:------------------------:|:----:|
+| ramfree释放内存          | ✅   | openlist2                | ✅   |
+| FileBrowser文件浏览      | ✅   | adguardhome              | ✅   |
+| lucky                    | ✅   | luci-app-amlogic        | ✅   |
+| 其他                     | ⏳   |                         |       |
+
+✅ 支持 ； ⏳ 计划中 ； ❌ 不支持
+
+
 # 😊Supported devices
 | 芯片     | 设备 |
 |----------|------|
@@ -36,7 +47,7 @@
 | h6       | Vplus, Tanix-TX6, TQC-A01 |
 
 # 🤗Screenshot
-<img width="1418" height="1162" alt="page1" src="https://github.com/user-attachments/assets/cd9b40cc-ae3c-43c4-b327-de03647a9fbe" />
+![screenshots](./files/screenshot/screenshot1.png)
 
 # 🌟Star戳一戳，好运加满！😆
 > **"点过 `Star` 的朋友，颜值与智慧双双在线！✨"**

@@ -29,13 +29,13 @@ fi
 # 输出调试信息
 echo "$(date '+%Y-%m-%d %H:%M:%S') - 开始构建固件..."
 
-# ============= iStoreOS仓库内的插件==============
-# 定义所需安装的包列表 下列插件你都可以自行删减
+# ============= iStoreOS 24.10 官方集成插件===================
+# ============= 若启用 则打开注释 ============================
 
-# 初始化变量
+# 定义初始化变量
 PACKAGES=""
 
-# 官方集成列表
+# iStoreOS官方集成列表，若启用则打开注释
 #PACKAGES="$PACKAGES adb"                          # Android调试桥，用于与Android设备通信调试（未启用）
 #PACKAGES="$PACKAGES adb-enablemodem"              # 启用ADB调制解调器模式的工具（未启用）
 #PACKAGES="$PACKAGES appfilter"                    # 应用过滤工具（未启用）
@@ -75,9 +75,11 @@ PACKAGES="$PACKAGES dbus"                         # D-Bus消息总线系统
 PACKAGES="$PACKAGES dkml"                         # DKMS内核模块管理工具
 PACKAGES="$PACKAGES -dnsmasq"                     # 移除轻量DNS服务器dnsmasq
 PACKAGES="$PACKAGES dnsmasq-full"                 # 全功能DNS服务器和DHCP服务器
-PACKAGES="$PACKAGES docker"                       # Docker容器引擎
-PACKAGES="$PACKAGES docker-compose"               # Docker容器编排工具
-PACKAGES="$PACKAGES dockerd"                      # Docker守护进程
+if [ "$INCLUDE_DOCKER" = "yes" ]; then
+    PACKAGES="$PACKAGES docker"                       # Docker容器引擎
+    PACKAGES="$PACKAGES docker-compose"               # Docker容器编排工具
+    PACKAGES="$PACKAGES dockerd"                      # Docker守护进程
+fi
 PACKAGES="$PACKAGES dropbear"                     # 轻量级SSH服务器
 PACKAGES="$PACKAGES ds-lite"
 PACKAGES="$PACKAGES e100-firmware"                # Intel E100系列网卡固件
@@ -764,7 +766,9 @@ PACKAGES="$PACKAGES luci-app-cpufreq"             # CPU频率控制应用
 #PACKAGES="$PACKAGES luci-app-ddns"                # DDNS应用（未启用）
 #PACKAGES="$PACKAGES luci-app-ddnsto"              # DDNSTO应用（未启用）
 PACKAGES="$PACKAGES luci-app-diskman"             # 磁盘管理应用
-PACKAGES="$PACKAGES luci-app-dockerman"           # Docker管理应用
+if [ "$INCLUDE_DOCKER" = "yes" ]; then
+    PACKAGES="$PACKAGES luci-app-dockerman"           # Docker管理应用
+fi
 PACKAGES="$PACKAGES luci-app-fan"                 # 风扇控制应用
 #PACKAGES="$PACKAGES luci-app-filetransfer"        # 文件传输应用（未启用）
 PACKAGES="$PACKAGES luci-app-firewall"            # 防火墙应用
@@ -792,7 +796,9 @@ PACKAGES="$PACKAGES luci-i18n-cpufreq-zh-cn"      # CPU频率控制中文语言�
 #PACKAGES="$PACKAGES luci-i18n-ddns-zh-cn"         # DDNS中文语言包（未启用）
 #PACKAGES="$PACKAGES luci-i18n-ddnsto-zh-cn"       # DDNSTO中文语言包（未启用）
 PACKAGES="$PACKAGES luci-i18n-diskman-zh-cn"      # 磁盘管理中文语言包
-PACKAGES="$PACKAGES luci-i18n-dockerman-zh-cn"    # Docker管理中文语言包
+if [ "$INCLUDE_DOCKER" = "yes" ]; then
+    PACKAGES="$PACKAGES luci-i18n-dockerman-zh-cn"    # Docker管理中文语言包
+fi
 PACKAGES="$PACKAGES luci-i18n-fan-zh-cn"          # 风扇控制中文语言包
 #PACKAGES="$PACKAGES luci-i18n-filetransfer-zh-cn" # 文件传输中文语言包（未启用）
 PACKAGES="$PACKAGES luci-i18n-firewall-zh-cn"     # 防火墙中文语言包
@@ -810,7 +816,9 @@ PACKAGES="$PACKAGES luci-i18n-unishare-zh-cn"     # UniShare中文语言包
 PACKAGES="$PACKAGES luci-i18n-upnp-zh-cn"         # UPnP中文语言包
 PACKAGES="$PACKAGES luci-i18n-wol-zh-cn"          # 网络唤醒中文语言包
 PACKAGES="$PACKAGES luci-lib-base"                # Luci基础库
-PACKAGES="$PACKAGES luci-lib-docker"              # Luci Docker库
+if [ "$INCLUDE_DOCKER" = "yes" ]; then
+    PACKAGES="$PACKAGES luci-lib-docker"              # Luci Docker库
+fi
 #PACKAGES="$PACKAGES luci-lib-fs"                  # Luci文件系统库
 PACKAGES="$PACKAGES luci-lib-ip"                  # Luci IP库
 PACKAGES="$PACKAGES luci-lib-ipkg"                # Luci IPKG库
@@ -1034,29 +1042,19 @@ PACKAGES="$PACKAGES zlib"                         # zlib压缩库
 PACKAGES="$PACKAGES zram-swap"                    # ZRAM交换工具
 PACKAGES="$PACKAGES -libustream-mbedtls"          # 移除mbedtls的ustream库
 
-# O大打包脚本补充依赖，其他依赖官方列表有集成
+# 固件打包脚本必要依赖，其他依赖官方列表已集成
 PACKAGES="$PACKAGES perlbase-time"
 
-# 斐讯N1无线：无线问题未解决一般也用不上，故禁用；iw和iwinfo官方列表有集成
-#PACKAGES="$PACKAGES kmod-brcmfmac"
-#PACKAGES="$PACKAGES wpad-basic-mbedtls"
-#PACKAGES="$PACKAGES iw"
-#PACKAGES="$PACKAGES iwinfo"
+# 斐讯N1无线：此固件未考虑无线，需自行研究；其中iw和iwinfo官方列表已集成
+#PACKAGES="$PACKAGES kmod-brcmfmac wpad-basic-mbedtls"
 
 # file/packages目录的第三方可选插件
-PACKAGES="$PACKAGES filebrowser"
-PACKAGES="$PACKAGES luci-app-filebrowser-go"
-PACKAGES="$PACKAGES luci-i18n-filebrowser-go-zh-cn"
-PACKAGES="$PACKAGES luci-app-amlogic"
-PACKAGES="$PACKAGES luci-i18n-amlogic-zh-cn"
-PACKAGES="$PACKAGES lucky"
-PACKAGES="$PACKAGES luci-app-lucky"
-PACKAGES="$PACKAGES luci-i18n-lucky-zh-cn"
-PACKAGES="$PACKAGES openlist2"
-PACKAGES="$PACKAGES luci-app-openlist2"
-PACKAGES="$PACKAGES luci-i18n-openlist2-zh-cn"
-PACKAGES="$PACKAGES luci-app-ramfree"
-PACKAGES="$PACKAGES luci-i18n-ramfree-zh-cn"
+PACKAGES="$PACKAGES filebrowser luci-app-filebrowser-go luci-i18n-filebrowser-go-zh-cn"
+PACKAGES="$PACKAGES luci-app-amlogic luci-i18n-amlogic-zh-cn"
+PACKAGES="$PACKAGES lucky luci-app-lucky luci-i18n-lucky-zh-cn"
+PACKAGES="$PACKAGES openlist2 luci-app-openlist2 luci-i18n-openlist2-zh-cn"
+PACKAGES="$PACKAGES luci-app-ramfree luci-i18n-ramfree-zh-cn"
+PACKAGES="$PACKAGES luci-app-adguardhome luci-i18n-adguardhome-zh-cn"
 
 # opc-rely依赖，其他会自动集成
 PACKAGES="$PACKAGES ruby ruby-pstore ruby-psych ruby-yaml"
@@ -1064,11 +1062,9 @@ PACKAGES="$PACKAGES ruby ruby-pstore ruby-psych ruby-yaml"
 # 追加自定义包
 PACKAGES="$PACKAGES $CUSTOM_PACKAGES"
 
-
 # 构建镜像
 echo "开始构建......打印所有包名===="
 echo "$PACKAGES"
-
 
 # 开始构建
 make image PROFILE=generic PACKAGES="$PACKAGES" FILES="files"
