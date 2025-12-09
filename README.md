@@ -1,5 +1,5 @@
 <div align="center">
-  <img width="768" src="https://cdn.jsdelivr.net/gh/haiibo/OpenWrt/images/openwrt.png"/>
+  <img src="./files/screenshot/istoreos.png" style="max-width: 100%; height: auto;" />
   <h1>基于imagebuilder与ophub打包工具的iStoreOS固件</h1>
 
   <img src="https://img.shields.io/github/downloads/Kwonelee/iStoreOS-Actions/total.svg?style=for-the-badge&color=32C955"/>
@@ -31,11 +31,11 @@
 ## 😅 第三方插件 [![](https://img.shields.io/badge/-第三方插件-FFFFFF.svg)](#-第三方插件-)
 <div align="center">
 
-| 插件                     | 状态 | 插件                     | 状态  | 插件                   | 状态   |
-|:------------------------:|:----:|:------------------------:|:-----:|:------------------------:|:----:|
-| ramfree释放内存          | ✅   | openlist2                | ✅    | FileBrowser文件浏览器    | ⏳    |
-| adguardhome              | ✅   | lucky                    | ⏳     | luci-app-amlogic         | ✅   |
-| 其他                     | ⏳    |                          |       |                          |      |
+| 插件                     | 状态 | 插件                     | 状态  | 插件                    | 状态   |
+|:------------------------:|:----:|:------------------------:|:-----:|:------------------------:|:------:|
+| ramfree释放内存          | ✅   | luci-app-amlogic         | ✅    | FileBrowser文件浏览器    | ⏳     |
+| adguardhome              | ⏳   | lucky                    |  ⏳    | openlist2                | ⏳     |
+| 其他                     | ⏳   |                          |        |                          |        |
 
 ✅ 支持 - ⏳ 计划中 - ⭕ 不支持
 
@@ -50,8 +50,8 @@
 | s905x2   | X96Max-4G, X96Max-2G, MECOOL-KM3-4G, Tanix-Tx5-Max, A95X-F2, HG680-FJ |
 | s912     | Tanix-TX8-Max, Tanix-TX9-Pro(3G), Tanix-TX9-Pro(2G), Tanix-TX92, Nexbox-A1, Nexbox-A95X-A2, A95X, H96-Pro-Plus, VORKE-Z6-Plus, Mecool-M8S-PRO-L, Vontar-X92, T95Z-Plus, Octopus-Planet, Phicomm-T1, TX3-Mini, OneCloudPro-V1.1_V1.2 |
 | s905d    | MECOOL-KI-Pro, Phicomm-N1, SML-5442TW |
-| s905x    | HG680P, B860H, TBee-Box, T95, TX9, XiaoMI-3S, X96, Nexbox-a95x |
-| s905w    | X96-Mini, TX3-Mini, W95, X96W/FunTV, MXQ-Pro-4K |
+| s905x    | HG680P, B860H, TBee-Box, T95, TX9, XiaoMI-3S, X96, Nexbox-a95x, BTV9 |
+| s905w    | X96-Mini, TX3-Mini, W95, X96W/FunTV, MXQ-Pro-4K, MeCool-m8s-pro-W |
 | s905mb   | S65 |
 | s905l    | UNT402A, M201-S, MiBox-4, MiBox-4C, MG101, E900V21C, IP108H-53u1m, Tencent-Aurora-1s, B860AV2.1, B860AV2.1U, HM201 |
 | s905l2   | MGV2000, MGV2000-K, MGV3000, Wojia-TV-IPBS9505, M301A, E900v21E, e900v21d, CM201-1, IP108H, MGV2000-CW |
@@ -61,10 +61,10 @@
 | s905lb   | Q96-mini, BesTV-R3300L, SumaVision-Q7, MG101, s65, IPBS9505 |
 | s905     | Beelink-Mini-MX-2G, Sunvell-T95M, MXQ-Pro+4K, SumaVision-Q5 |
 | rk3588(s)| Radxa-Rock5B, Radxa-Rock5C, Orange-Pi-5-Plus, Beelink-IPC-R, HLink-H88K, HLink-H88K-V3, NanoPC-T6, Smart-Am60, DC-A588, Orangepi-5B |
-| rk3568   | FastRhino-R66S, FastRhino-R68S, Radxa-E25, NanoPi-R5S, NanoPi-R5C, HLink-H66K, HLink-H68K, HLink-H69K, Seewo-sv21, Mrkaio-m68s, Swan1-w28, Ruisen-box, DG-TN3568, Alark35-3500, MMBox-Anas3035, Wocyber-A3, Photonicat |
+| rk3568   | FastRhino-R66S, FastRhino-R68S, Radxa-E25, NanoPi-R5S, NanoPi-R5C, HLink-H66K, HLink-H68K, HLink-H69K, Seewo-sv21, Mrkaio-m68s, Swan1-w28, Ruisen-box, DG-TN3568, Alark35-3500, MMBox-Anas3035, Wocyber-A3, Photonicat, NSY-G68-Plus, NSY-G68-Plus, BDY-G18-Pro |
 | rk3566   | Panther-X2, JP-TvBox, LCKFB-Taishan-Pi, WXY-OEC-turbo-4g, Station-M2 |
 | rk3528   | HLink-H28K, Radxa-E20C, H96-Max-M2 |
-| rk3399   | EAIDK-610, King3399, TN3399, Kylin3399, ZCube1-Max, CRRC, SMART-AM40, SW799, ZYSJ, DG-3399, DLFR100, Emb3531, Leez-p710, tvi3315a, xiaobao, Fine3399, Firefly-RK3399, LX-R3S, Hugsun-x99, Tb-ls3399, Hisense-hs530r, Tpm312, ZK-rk39a, YSKJ, Fmx1-Pro, Sv-33a6x |
+| rk3399   | EAIDK-610, King3399, TN3399, Kylin3399, ZCube1-Max, CRRC, SMART-AM40, SW799, ZYSJ, DG-3399, DLFR100, Emb3531, Leez-p710, tvi3315a, xiaobao, Fine3399, Firefly-RK3399, LX-R3S, Hugsun-x99, Tb-ls3399, Hisense-hs530r, Tpm312, ZK-rk39a, YSKJ, Fmx1-Pro, Sv-33a6x, AIO-3399b |
 | rk3328   | BeikeYun, Chainedbox-L1-Pro, Station-M1, Bqeel-MVR9, Renegade/Firefly |
 | rk3318   | RX3318-Box |
 | h6       | Vplus, Tanix-TX6, TQC-A01 |

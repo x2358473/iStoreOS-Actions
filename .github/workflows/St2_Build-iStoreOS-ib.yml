@@ -15,6 +15,7 @@ on:
           - alark35-3500
           - anas3035
           - aio-3399b
+          - bdy-g18-pro
           - beikeyun
           - chainedbox
           - crrc
@@ -49,6 +50,8 @@ on:
           - nanopc-t6
           - nanopi-r5c
           - nanopi-r5s
+          - nsy-g16-plus
+          - nsy-g68-plus
           - orangepi-5-plus
           - orangepi-5b
           - panther-x2
@@ -162,7 +165,7 @@ on:
           - vplus
           - wocyber-a3
           - wxy-oect
-          - wxy-oect-replaced
+          - wxy-oect-mod
           - xiaobao
           - yskj
           - zcube1-max
@@ -181,19 +184,19 @@ on:
           - 6.6.115
           - 6.12.47
       auto_kernel:
-        description: "自动使用最新内核"
+        description: "自动使用最新内核-未匹配则自动"
         required: false
         default: true
         type: boolean
       openwrt_rootfs:
-        description: "请选择Rootfs通用底包（先确保St1有生成）"
+        description: "请选择Rootfs通用底包（先确保St1有执行）"
         required: true
         default: "RELEASE"
         type: choice
         options:
           - RELEASE
       network_settings:
-        description: "请选择初始网络配置（先确保St1有生成）"
+        description: "请选择初始网络配置（先确保St1有执行）"
         required: true
         default: "dhcp"
         type: choice
